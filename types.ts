@@ -1,5 +1,5 @@
-
 export type ViewType = 'HOME' | 'PROJECTS' | 'SKILLS' | 'CONTACT';
+export type Language = 'tr' | 'en'; // BUNU EKLE
 
 export interface Project {
   id: string;

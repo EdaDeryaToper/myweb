@@ -38,10 +38,46 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS: Skill[] = [
-  { name: 'REACT_UI', level: 92, icon: 'deployed_code', color: '#01cdfe', subtext: 'Component Architecture // State Hooks' },
-  { name: 'PYTHON_CORE', level: 88, icon: 'terminal', color: '#fffb96', subtext: 'Data Science // Automation // Scripting' },
-  { name: 'NODE_JS', level: 85, icon: 'javascript', color: '#05ffa1', subtext: 'Event-Loop // Microservices' },
-  { name: 'SQL_SYSTEMS', level: 79, icon: 'database', color: '#b967ff', subtext: 'Query Optimization // Scalability' },
-  { name: 'DESIGN_UX', level: 95, icon: 'palette', color: '#ff71ce', subtext: 'Vaporwave // Retro-Futurism' },
-  { name: 'AI_INTEGRATION', level: 82, icon: 'smart_toy', color: '#ffffff', subtext: 'Gemini API // LLM Orchestration' }
+  {
+    name: 'ASP.NET_CORE',
+    level: 92,
+    icon: 'code',
+    color: '#4ecdc4',
+    subtext: 'Web API // Clean Architecture // Microservices'
+  },
+  {
+    name: 'PYTHON',
+    level: 85,
+    icon: 'terminal',
+    color: '#ffe66d',
+    subtext: 'Data Analysis // Automation // Scripting'
+  },
+  {
+    name: 'REACT_NEXT',
+    level: 80,
+    icon: 'deployed_code',
+    color: '#ff6b9d',
+    subtext: 'React // Next.js // Modern Frontend'
+  },
+  {
+    name: 'DATABASE_SYSTEMS',
+    level: 88,
+    icon: 'database',
+    color: '#9d84b7',
+    subtext: 'MSSQL // MongoDB // PostgreSQL'
+  },
+  {
+    name: 'MESSAGE_BROKERS',
+    level: 82,
+    icon: 'podcasts',
+    color: '#ff6b9d',
+    subtext: 'RabbitMQ // Kafka // Redis // Event-Driven'
+  },
+  {
+    name: 'DEVOPS_TOOLS',
+    level: 79,
+    icon: 'deployed_code_account',
+    color: '#4ecdc4',
+    subtext: 'Docker // CI/CD // Containerization'
+  }
 ];

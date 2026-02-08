@@ -1,113 +1,203 @@
-
 import React from 'react';
+import { Language } from '../types';
+import { translations } from '../translations';
 
-const ContactView: React.FC = () => {
+interface ContactViewProps {
+  language: Language;
+}
+
+const ContactView: React.FC<ContactViewProps> = ({ language }) => {
+  const t = translations[language];
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl">
-      {/* Contact Form Terminal */}
-      <div className="lg:col-span-2">
-        <div className="bg-black/60 border-2 border-[#b967ff] shadow-[8px_8px_0px_#01cdfe] p-8 backdrop-blur-xl relative">
-          <div className="absolute top-4 right-4 flex gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#ff71ce]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#fffb96]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#05ffa1]"></div>
-          </div>
-
-          <div className="flex items-center gap-4 mb-10 border-b border-[#01cdfe]/20 pb-4">
-            <h2 className="retro-text-gradient text-4xl font-['Syncopate'] uppercase">Uplink</h2>
-            <span className="font-mono text-xs text-gray-500 uppercase tracking-widest mt-2">SMTP/95.GATEWAY</span>
-          </div>
-
-          <form className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <label className="block text-[10px] uppercase tracking-widest text-[#ff71ce] mb-3 font-bold">
-                  Identity // Name
-                </label>
-                <input 
-                  type="text" 
-                  className="w-full bg-black/80 border-2 border-[#b967ff]/50 px-5 py-3 text-white placeholder-white/10 font-mono focus:outline-none focus:border-[#01cdfe] focus:shadow-[0_0_15px_#01cdfe] transition-all"
-                  placeholder="GUEST_USER"
-                />
-              </div>
-              <div>
-                <label className="block text-[10px] uppercase tracking-widest text-[#ff71ce] mb-3 font-bold">
-                  Channel // Email
-                </label>
-                <input 
-                  type="email" 
-                  className="w-full bg-black/80 border-2 border-[#b967ff]/50 px-5 py-3 text-white placeholder-white/10 font-mono focus:outline-none focus:border-[#01cdfe] focus:shadow-[0_0_15px_#01cdfe] transition-all"
-                  placeholder="USER@NETSCAPE.NET"
-                />
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl">
+        {/* Contact Form Terminal */}
+        <div className="lg:col-span-2">
+          <div className="bg-black/60 border-2 p-8 backdrop-blur-xl relative"
+               style={{
+                 borderColor: 'var(--neon-purple)',
+                 boxShadow: '8px 8px 0px var(--neon-cyan)'
+               }}>
+            <div className="absolute top-4 right-4 flex gap-2">
+              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: 'var(--neon-pink)' }}></div>
+              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: 'var(--neon-yellow)' }}></div>
+              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: 'var(--neon-green)' }}></div>
             </div>
 
-            <div>
-              <label className="block text-[10px] uppercase tracking-widest text-[#ff71ce] mb-3 font-bold">
-                Data // Packet
-              </label>
-              <textarea 
-                rows={6}
-                className="w-full bg-black/80 border-2 border-[#b967ff]/50 px-5 py-3 text-white placeholder-white/10 font-mono focus:outline-none focus:border-[#01cdfe] focus:shadow-[0_0_15px_#01cdfe] transition-all resize-none"
-                placeholder="INITIATE DATA TRANSFER..."
-              ></textarea>
+            <div className="flex items-center gap-4 mb-10 border-b pb-4"
+                 style={{ borderColor: 'var(--neon-cyan)', borderOpacity: 0.2 }}>
+              <h2 className="retro-text-gradient text-4xl font-['Syncopate'] uppercase">{t.contact.title}</h2>
+              <span className="font-mono text-xs text-gray-500 uppercase tracking-widest mt-2">{t.contact.subtitle}</span>
             </div>
 
-            <button className="group relative w-full py-5 bg-[#ff71ce] text-black font-['Syncopate'] font-bold text-xl uppercase tracking-tighter shadow-[8px_8px_0px_#b967ff] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#b967ff] transition-all active:translate-x-2 active:translate-y-2 active:shadow-none">
+            <form className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <label className="block text-[10px] uppercase tracking-widest mb-3 font-bold"
+                         style={{ color: 'var(--neon-pink)' }}>
+                    {t.contact.formLabels.name}
+                  </label>
+                  <input
+                      type="text"
+                      className="w-full bg-black/80 border-2 px-5 py-3 text-white placeholder-white/10 font-mono focus:outline-none transition-all"
+                      style={{ borderColor: 'var(--neon-purple)' }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = 'var(--neon-cyan)';
+                        e.target.style.boxShadow = '0 0 15px var(--neon-cyan)';
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = 'var(--neon-purple)';
+                        e.target.style.boxShadow = 'none';
+                      }}
+                      placeholder={t.contact.formLabels.namePlaceholder}
+                  />
+                </div>
+                <div>
+                  <label className="block text-[10px] uppercase tracking-widest mb-3 font-bold"
+                         style={{ color: 'var(--neon-pink)' }}>
+                    {t.contact.formLabels.email}
+                  </label>
+                  <input
+                      type="email"
+                      className="w-full bg-black/80 border-2 px-5 py-3 text-white placeholder-white/10 font-mono focus:outline-none transition-all"
+                      style={{ borderColor: 'var(--neon-purple)' }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = 'var(--neon-cyan)';
+                        e.target.style.boxShadow = '0 0 15px var(--neon-cyan)';
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = 'var(--neon-purple)';
+                        e.target.style.boxShadow = 'none';
+                      }}
+                      placeholder={t.contact.formLabels.emailPlaceholder}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[10px] uppercase tracking-widest mb-3 font-bold"
+                       style={{ color: 'var(--neon-pink)' }}>
+                  {t.contact.formLabels.message}
+                </label>
+                <textarea
+                    rows={6}
+                    className="w-full bg-black/80 border-2 px-5 py-3 text-white placeholder-white/10 font-mono focus:outline-none transition-all resize-none"
+                    style={{ borderColor: 'var(--neon-purple)' }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = 'var(--neon-cyan)';
+                      e.target.style.boxShadow = '0 0 15px var(--neon-cyan)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = 'var(--neon-purple)';
+                      e.target.style.boxShadow = 'none';
+                    }}
+                    placeholder={t.contact.formLabels.messagePlaceholder}
+                ></textarea>
+              </div>
+
+              <button className="group relative w-full py-5 text-black font-['Syncopate'] font-bold text-xl uppercase tracking-tighter transition-all active:translate-x-2 active:translate-y-2 active:shadow-none"
+                      style={{
+                        backgroundColor: 'var(--neon-pink)',
+                        boxShadow: '8px 8px 0px var(--neon-purple)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translate(1px, 1px)';
+                        e.currentTarget.style.boxShadow = '4px 4px 0px var(--neon-purple)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translate(0, 0)';
+                        e.currentTarget.style.boxShadow = '8px 8px 0px var(--neon-purple)';
+                      }}>
               <span className="relative z-10 flex items-center justify-center gap-3">
-                Transmit Packet
+                {t.contact.formLabels.submit}
                 <span className="material-symbols-outlined text-2xl">send</span>
               </span>
-            </button>
-          </form>
-        </div>
-      </div>
-
-      {/* Side Info / Socials */}
-      <div className="space-y-8">
-        <div className="bg-black/40 border border-[#01cdfe]/30 p-6 backdrop-blur-md">
-          <div className="japanese-vertical text-[#fffb96] text-[10px] font-bold absolute -right-6 top-10 opacity-40">
-            電子メール
-          </div>
-          <h3 className="font-['Syncopate'] text-sm font-bold text-[#01cdfe] mb-6 uppercase tracking-widest border-b border-[#01cdfe]/20 pb-2">
-            External_Nodes
-          </h3>
-          <div className="grid grid-cols-1 gap-4">
-            <a href="#" className="flex items-center gap-4 p-4 border border-[#b967ff]/30 hover:bg-[#b967ff]/10 hover:border-[#ff71ce] transition-all group">
-              <span className="material-symbols-outlined text-3xl text-[#ff71ce]">save</span>
-              <div>
-                <div className="text-[10px] font-bold text-white uppercase tracking-widest">Source_Code</div>
-                <div className="text-[8px] font-mono text-gray-500">GITHUB.DAT</div>
-              </div>
-            </a>
-            <a href="#" className="flex items-center gap-4 p-4 border border-[#b967ff]/30 hover:bg-[#01cdfe]/10 hover:border-[#01cdfe] transition-all group">
-              <span className="material-symbols-outlined text-3xl text-[#01cdfe]">cable</span>
-              <div>
-                <div className="text-[10px] font-bold text-white uppercase tracking-widest">Network</div>
-                <div className="text-[8px] font-mono text-gray-500">LINKEDIN.EXE</div>
-              </div>
-            </a>
-            <a href="#" className="flex items-center gap-4 p-4 border border-[#b967ff]/30 hover:bg-[#fffb96]/10 hover:border-[#fffb96] transition-all group">
-              <span className="material-symbols-outlined text-3xl text-[#fffb96]">podcasts</span>
-              <div>
-                <div className="text-[10px] font-bold text-white uppercase tracking-widest">Transmission</div>
-                <div className="text-[8px] font-mono text-gray-500">DISCORD.SIG</div>
-              </div>
-            </a>
+              </button>
+            </form>
           </div>
         </div>
 
-        <div className="p-6 bg-[#ff71ce]/5 border border-[#ff71ce]/20">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#05ffa1] animate-ping"></div>
-            <span className="text-[10px] font-mono text-[#05ffa1]">NODE_404_READY</span>
+        {/* Side Info / Socials */}
+        <div className="space-y-8">
+          <div className="bg-black/40 border p-6 backdrop-blur-md relative"
+               style={{ borderColor: 'var(--neon-cyan)', borderOpacity: 0.3 }}>
+            {/* Japonca dekoratif - kalacak */}
+            <div className="japanese-vertical text-[10px] font-bold absolute -right-6 top-10 opacity-40"
+                 style={{ color: 'var(--neon-yellow)' }}>
+              電子メール
+            </div>
+            <h3 className="font-['Syncopate'] text-sm font-bold mb-6 uppercase tracking-widest border-b pb-2"
+                style={{ color: 'var(--neon-cyan)', borderColor: 'var(--neon-cyan)', borderOpacity: 0.2 }}>
+              {t.contact.externalNodes}
+            </h3>
+            <div className="grid grid-cols-1 gap-4">
+              <a href="#" className="flex items-center gap-4 p-4 border transition-all group"
+                 style={{ borderColor: 'var(--neon-purple)', borderOpacity: 0.3 }}
+                 onMouseEnter={(e) => {
+                   e.currentTarget.style.backgroundColor = 'rgba(157, 132, 183, 0.1)';
+                   e.currentTarget.style.borderColor = 'var(--neon-pink)';
+                 }}
+                 onMouseLeave={(e) => {
+                   e.currentTarget.style.backgroundColor = 'transparent';
+                   e.currentTarget.style.borderColor = 'var(--neon-purple)';
+                 }}>
+                <span className="material-symbols-outlined text-3xl" style={{ color: 'var(--neon-pink)' }}>save</span>
+                <div>
+                  <div className="text-[10px] font-bold text-white uppercase tracking-widest">{t.contact.links.github}</div>
+                  <div className="text-[8px] font-mono text-gray-500">{t.contact.links.githubSub}</div>
+                </div>
+              </a>
+              <a href="#" className="flex items-center gap-4 p-4 border transition-all group"
+                 style={{ borderColor: 'var(--neon-purple)', borderOpacity: 0.3 }}
+                 onMouseEnter={(e) => {
+                   e.currentTarget.style.backgroundColor = 'rgba(78, 205, 196, 0.1)';
+                   e.currentTarget.style.borderColor = 'var(--neon-cyan)';
+                 }}
+                 onMouseLeave={(e) => {
+                   e.currentTarget.style.backgroundColor = 'transparent';
+                   e.currentTarget.style.borderColor = 'var(--neon-purple)';
+                 }}>
+                <span className="material-symbols-outlined text-3xl" style={{ color: 'var(--neon-cyan)' }}>cable</span>
+                <div>
+                  <div className="text-[10px] font-bold text-white uppercase tracking-widest">{t.contact.links.linkedin}</div>
+                  <div className="text-[8px] font-mono text-gray-500">{t.contact.links.linkedinSub}</div>
+                </div>
+              </a>
+              <a href="#" className="flex items-center gap-4 p-4 border transition-all group"
+                 style={{ borderColor: 'var(--neon-purple)', borderOpacity: 0.3 }}
+                 onMouseEnter={(e) => {
+                   e.currentTarget.style.backgroundColor = 'rgba(255, 230, 109, 0.1)';
+                   e.currentTarget.style.borderColor = 'var(--neon-yellow)';
+                 }}
+                 onMouseLeave={(e) => {
+                   e.currentTarget.style.backgroundColor = 'transparent';
+                   e.currentTarget.style.borderColor = 'var(--neon-purple)';
+                 }}>
+                <span className="material-symbols-outlined text-3xl" style={{ color: 'var(--neon-yellow)' }}>podcasts</span>
+                <div>
+                  <div className="text-[10px] font-bold text-white uppercase tracking-widest">{t.contact.links.discord}</div>
+                  <div className="text-[8px] font-mono text-gray-500">{t.contact.links.discordSub}</div>
+                </div>
+              </a>
+            </div>
           </div>
-          <p className="text-[10px] leading-relaxed text-gray-500 font-mono">
-            SHIBUYA NETWORK SYSTEMS // ESTABLISHED CONNECTION SECURE. DATA IS ENCRYPTED VIA END-TO-END NOSTALGIA PROTOCOL.
-          </p>
+
+          <div className="p-6 border"
+               style={{
+                 backgroundColor: 'rgba(255, 107, 157, 0.05)',
+                 borderColor: 'var(--neon-pink)',
+                 borderOpacity: 0.2
+               }}>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-1.5 h-1.5 rounded-full animate-ping" style={{ backgroundColor: 'var(--neon-green)' }}></div>
+              <span className="text-[10px] font-mono" style={{ color: 'var(--neon-green)' }}>{t.contact.nodeStatus}</span>
+            </div>
+            <p className="text-[10px] leading-relaxed text-gray-500 font-mono">
+              {t.contact.statusMessage}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 

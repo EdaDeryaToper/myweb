@@ -1,7 +1,5 @@
 {
-  "name": "Copy of Alex Driver - Vaporwave Architect Portfolio",
-  "description": "A high-end desktop-first professional portfolio with a nostalgic vaporwave aesthetic, featuring projects, skills, and a retro-terminal contact system.",
-  "requestFramePermissions": [
-    "microphone"
-  ]
+  "name": "Eda Derya Toper - Full Stack Developer Portfolio",
+  "description": "Full stack developer portfolio showcasing web architectures, backend systems, and modern frontend solutions with a retro-futuristic aesthetic.",
+  "requestFramePermissions": []
 }
