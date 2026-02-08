@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>ALEX_DRIVER // VAPORWAVE_OS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syncopate:wght@400;700&family=Noto+Sans+JP:wght@300;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --neon-pink: #ff71ce;
+            --neon-cyan: #01cdfe;
+            --neon-purple: #b967ff;
+            --neon-yellow: #fffb96;
+            --neon-green: #05ffa1;
+            --dark-bg: #120422;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            margin: 0;
+            color: white;
+            overflow: hidden; /* Desktop handles internal scrolling */
+        }
+
+        .grid-background {
+            background-image: 
+                linear-gradient(to right, rgba(185, 103, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(185, 103, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .scanlines {
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%, 
+                rgba(0, 0, 0, 0.1) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .retro-text-gradient {
+            background: linear-gradient(to bottom, #fff 0%, var(--neon-pink) 50%, var(--neon-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 0px 8px rgba(255, 113, 206, 0.5));
+        }
+
+        .grid-floor {
+            height: 300px;
+            background-image: 
+                linear-gradient(to right, var(--neon-cyan) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--neon-pink) 1px, transparent 1px);
+            background-size: 60px 60px;
+            transform: perspective(400px) rotateX(60deg);
+            transform-origin: top;
+            opacity: 0.15;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.3);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-pink);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-cyan);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="font-['Space_Grotesk']">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
