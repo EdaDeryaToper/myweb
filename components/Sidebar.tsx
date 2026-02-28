@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ViewType, Language } from '../types';
 import { translations } from '../translations';
-import { LogoModern, LogoGlitch, LogoPixel } from './Logo';
 
 interface SidebarProps {
   activeView: ViewType;
   onViewChange: (view: ViewType) => void;
   language: Language;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange, language }) => {
+const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange, language, isOpen, onClose }) => {
   const t = translations[language];
-  const [isOpen, setIsOpen] = useState(false);
 
   const navItems: { id: ViewType; icon: string }[] = [
     { id: 'HOME', icon: 'home' },
@@ -22,33 +22,22 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange, language })
 
   const handleNavClick = (view: ViewType) => {
     onViewChange(view);
-    setIsOpen(false);
+    onClose();
   };
 
   return (
       <>
-        {/* Mobil Hamburger Butonu - sidebar açıkken gizle */}
-        {!isOpen && (
-            <button
-                onClick={() => setIsOpen(true)}
-                className="lg:hidden fixed top-4 left-4 z-[60] p-2 bg-black/70 border border-[#ff71ce]/50 text-[#ff71ce] backdrop-blur-sm hover:bg-[#ff71ce]/10 transition-all"
-                aria-label="Open menu"
-            >
-              <span className="material-symbols-outlined text-xl">menu</span>
-            </button>
-        )}
-
         {/* Overlay */}
         {isOpen && (
             <div
                 className="lg:hidden fixed inset-0 bg-black/70 z-40 backdrop-blur-sm"
-                onClick={() => setIsOpen(false)}
+                onClick={() => onClose()}
             />
         )}
 
         {/* Sidebar */}
         <aside className={`
-        fixed lg:relative z-50 lg:z-40
+        fixed z-50
         h-screen w-72
         bg-black/95 lg:bg-black/40
         backdrop-blur-xl
@@ -63,12 +52,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange, language })
           <div className="mb-12 lg:mb-16">
             {/* İsim + Kapat butonu */}
             <div className="flex items-start justify-between mb-4">
-              
               <h1 className="retro-text-gradient text-2xl font-['Syncopate'] font-bold leading-tight">
                 EDA DERYA<br />TOPER
               </h1>
               <button
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => onClose()}
                   className="lg:hidden flex-shrink-0 ml-2 p-1.5 border border-[#ff71ce]/30 text-[#ff71ce] hover:bg-[#ff71ce]/10 transition-all"
                   aria-label="Close menu"
               >
@@ -100,13 +88,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange, language })
                 </svg>
               </a>
             </div>
-            
 
             <div className="text-[10px] font-mono text-[#01cdfe] tracking-[0.3em] uppercase opacity-80 border-t border-[#01cdfe]/20 pt-2">
               {t.sidebar.subtitle}
             </div>
           </div>
-          
 
           {/* Navigation */}
           <nav className="flex-1 space-y-4 lg:space-y-6">
@@ -133,7 +119,6 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange, language })
                 </button>
             ))}
           </nav>
-          
 
           {/* System Status Display */}
           <div className="mt-auto pt-8 border-t border-white/5 space-y-4">

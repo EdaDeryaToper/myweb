@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import { ViewType, Language } from './types';
 import { translations } from './translations';
 import Sidebar from './components/Sidebar';
@@ -11,6 +12,7 @@ const App: React.FC = () => {
     const [currentView, setCurrentView] = useState<ViewType>('HOME');
     const [language, setLanguage] = useState<Language>('tr');
     const [isBooted, setIsBooted] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const t = translations[language];
 
@@ -22,16 +24,16 @@ const App: React.FC = () => {
     if (!isBooted) {
         return (
             <div className="fixed inset-0 bg-[#120422] flex flex-col items-center justify-center font-mono text-[#01cdfe]">
-                <div className="mb-4 text-xl tracking-[0.5em] animate-pulse">{t.system.booting}</div>
-                <div className="w-64 h-1 bg-white/10 relative overflow-hidden">
+                <div className="mb-4 text-sm sm:text-xl tracking-[0.3em] sm:tracking-[0.5em] text-center px-4 animate-pulse">{t.system.booting}</div>
+                <div className="w-48 sm:w-64 h-1 bg-white/10 relative overflow-hidden">
                     <div className="absolute inset-y-0 left-0 bg-[#ff71ce] animate-[loading_1.5s_ease-in-out_infinite]" style={{ width: '40%' }}></div>
                 </div>
                 <style>{`
-          @keyframes loading {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(250%); }
-          }
-        `}</style>
+                    @keyframes loading {
+                        0% { transform: translateX(-100%); }
+                        100% { transform: translateX(250%); }
+                    }
+                `}</style>
             </div>
         );
     }
@@ -79,12 +81,25 @@ const App: React.FC = () => {
             </div>
             <div className="fixed inset-0 scanlines z-50 pointer-events-none opacity-20"></div>
 
+            {/* Mobil Hamburger Butonu - portal ile body'e render, scroll'dan tamamen bağımsız */}
+            
+            {!isSidebarOpen && ReactDOM.createPortal(
+                <button
+                    onClick={() => setIsSidebarOpen(true)}
+                    className="lg:hidden fixed top-5 left-5 z-[70] p-2 bg-black/80 border border-[#ff71ce]/50 text-[#ff71ce] backdrop-blur-md shadow-[0_0_15px_rgba(255,113,206,0.3)]"
+                    aria-label="Open menu"
+                >
+                    <span className="material-symbols-outlined text-2xl">menu</span>
+                </button>,
+                document.body
+            )}
+
             {/* Persistent Sidebar */}
-            <Sidebar activeView={currentView} onViewChange={setCurrentView} language={language} />
+            <Sidebar activeView={currentView} onViewChange={setCurrentView} language={language} isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
             {/* Main Content Area */}
-            <main className="relative z-10 flex-1 h-screen overflow-y-auto pt-4 px-4 pb-24 sm:pt-8 sm:px-8 lg:px-24">
-
+            <main className="relative z-10 flex-1 h-screen overflow-y-auto pt-4 px-4 pb-24 sm:pt-8 sm:px-8 lg:px-24 lg:ml-72">
+                <header className="sticky top-0 z-30 bg-[#120422]/90 backdrop-blur-lg border-b border-[#01cdfe]/20 px-4 sm:px-8 lg:px-24 py-4">
                 {/* View Header Info */}
                 <div className="flex justify-between items-center mb-6 sm:mb-8 border-b border-[#01cdfe]/20 pb-4">
 
@@ -123,7 +138,7 @@ const App: React.FC = () => {
                             </a>
                         </div>
 
-                        {/* Language Toggle */}
+                        {/* Language Toggle - ikonlu */}
                         <button
                             onClick={() => setLanguage(language === 'tr' ? 'en' : 'tr')}
                             className="flex items-center gap-2 px-3 py-1.5 border border-[#fffb96]/30 bg-black/40 hover:bg-[#fffb96]/10 hover:border-[#fffb96] transition-all"
@@ -141,7 +156,7 @@ const App: React.FC = () => {
                         </div>
                     </div>
                 </div>
-
+                </header>
                 {/* Dynamic View Content */}
                 <div className="animate-[fadeSlide_0.5s_ease-out]">
                     {renderView()}
@@ -149,11 +164,15 @@ const App: React.FC = () => {
             </main>
 
             <style>{`
-        @keyframes fadeSlide {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
+                @keyframes fadeSlide {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                @keyframes loading {
+                    0% { transform: translateX(-100%); }
+                    100% { transform: translateX(250%); }
+                }
+            `}</style>
 
             {/* Global Aesthetics - mobilde gizle */}
             <div className="hidden sm:block fixed bottom-4 right-8 z-50 pointer-events-none text-right font-mono text-[10px] text-[#ff71ce] opacity-60">
