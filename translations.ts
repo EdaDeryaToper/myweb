@@ -11,7 +11,7 @@ export const translations = {
             },
             cpuUsage: "CPU_KULLANIM",
             memBuffer: "BELLEK_TAMPON",
-            established: "KURULUŞ_1994"
+            established: "KURULUŞ_1992"
         },
 
         // Home Page
@@ -85,7 +85,7 @@ export const translations = {
             },
             cpuUsage: "CPU_USAGE",
             memBuffer: "MEM_BUFFER",
-            established: "EST_1994"
+            established: "EST_1992"
         },
 
         // Home Page

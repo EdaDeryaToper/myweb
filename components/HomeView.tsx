@@ -13,7 +13,7 @@ const HomeView: React.FC<HomeViewProps> = ({ language }) => {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center min-h-[70vh]">
         {/* Text Content */}
         <div className="order-2 lg:order-1 lg:col-span-3">
-          <div className="inline-block px-3 py-1 bg-[#ff71ce]/20 border border-[#ff71ce] text-[#ff71ce] font-mono text-[10px] tracking-[0.3em] uppercase mb-6">
+          <div className="inline-block px-3 py-1 bg-[#ff71ce]/20 border border-[#fffb96] text-[#fffb96] font-mono text-[10px] tracking-[0.3em] uppercase mb-6">
             {t.home.protocol}
           </div>
 

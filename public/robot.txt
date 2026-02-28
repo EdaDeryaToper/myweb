@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap dosyanın tam adresi
+Sitemap: https://www.edaderyatoper.com/sitemap.xml
