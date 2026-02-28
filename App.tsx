@@ -15,7 +15,6 @@ const App: React.FC = () => {
     const t = translations[language];
 
     useEffect(() => {
-        // Artificial boot delay for aesthetic
         const timer = setTimeout(() => setIsBooted(true), 1500);
         return () => clearTimeout(timer);
     }, []);
@@ -49,6 +48,30 @@ const App: React.FC = () => {
 
     return (
         <div className="relative min-h-screen flex overflow-hidden">
+            {/* SEO: JSON-LD Structured Data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Person",
+                        "name": "Eda Derya Toper",
+                        "url": "https://www.edaderyatoper.com",
+                        "jobTitle": "Software Specialist",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Ankara",
+                            "addressCountry": "TR"
+                        },
+                        "sameAs": [
+                            "https://github.com/edaderyatoper",
+                            "https://linkedin.com/in/eda-derya-toper",
+                            "https://x.com/ToperEda"
+                        ]
+                    })
+                }}
+            />
+
             {/* Background Layer */}
             <div className="fixed inset-0 grid-background z-0 opacity-40"></div>
             <div className="fixed bottom-0 left-0 right-0 z-0 flex justify-center pointer-events-none">
@@ -60,27 +83,29 @@ const App: React.FC = () => {
             <Sidebar activeView={currentView} onViewChange={setCurrentView} language={language} />
 
             {/* Main Content Area */}
-            <main className="relative z-10 flex-1 h-screen overflow-y-auto pt-8 px-12 pb-24 lg:px-24">
+            <main className="relative z-10 flex-1 h-screen overflow-y-auto pt-4 px-4 pb-24 sm:pt-8 sm:px-8 lg:px-24">
+
                 {/* View Header Info */}
-                <div className="flex justify-between items-center mb-8 border-b border-[#01cdfe]/20 pb-4">
-                    <div className="flex items-center gap-4">
+                <div className="flex justify-between items-center mb-6 sm:mb-8 border-b border-[#01cdfe]/20 pb-4">
+
+                    {/* Sol: Terminal path — mobilde gizle */}
+                    <div className="hidden sm:flex items-center gap-3">
                         <span className="material-symbols-outlined text-[#ff71ce]">terminal</span>
                         <span className="font-mono text-xs text-[#01cdfe]/80 tracking-widest uppercase">
-              {t.system.path.replace('{view}', currentView)}
-            </span>
+                            {t.system.path.replace('{view}', currentView)}
+                        </span>
                     </div>
-                    <div className="flex items-center gap-4">
-                        {/* Sosyal Medya İkonları - Retro-Futuristic Glow Edition */}
-                        <div className="flex gap-4 mb-2 items-center mr-6">
-                            {/* GitHub */}
+
+                    {/* Sağ: Sosyal + Dil + Status */}
+                    <div className="flex items-center gap-3 ml-auto">
+                        {/* Sosyal medya - sidebar'da zaten var, sm ve üstünde göster */}
+                        <div className="hidden sm:flex gap-4 items-center mr-2">
                             <a href="https://github.com/edaderyatoper" target="_blank" rel="noopener noreferrer"
                                className="text-[#01cdfe] hover:text-[#ff71ce] transition-all duration-300 drop-shadow-[0_0_5px_#01cdfe] hover:drop-shadow-[0_0_10px_#ff71ce]" title="GitHub">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                                 </svg>
                             </a>
-
-                            {/* LinkedIn */}
                             <a href="https://linkedin.com/in/eda-derya-toper" target="_blank" rel="noopener noreferrer"
                                className="text-[#01cdfe] hover:text-[#ff71ce] transition-all duration-300 drop-shadow-[0_0_5px_#01cdfe] hover:drop-shadow-[0_0_10px_#ff71ce]" title="LinkedIn">
                                 <svg xmlns="http://www.w3.org/2000/xlink" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -89,8 +114,6 @@ const App: React.FC = () => {
                                     <circle cx="4" cy="4" r="2"></circle>
                                 </svg>
                             </a>
-
-                            {/* X (Twitter) */}
                             <a href="https://x.com/ToperEda" target="_blank" rel="noopener noreferrer"
                                className="text-[#01cdfe] hover:text-[#ff71ce] transition-all duration-300 drop-shadow-[0_0_5px_#01cdfe] hover:drop-shadow-[0_0_10px_#ff71ce]" title="X">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -99,20 +122,22 @@ const App: React.FC = () => {
                                 </svg>
                             </a>
                         </div>
-                        {/* Language Toggle Button */}
+
+                        {/* Language Toggle */}
                         <button
                             onClick={() => setLanguage(language === 'tr' ? 'en' : 'tr')}
-                            className="flex items-center gap-2 px-3 py-1.5 border border-[#fffb96]/30 bg-black/40 hover:bg-[#fffb96]/10 hover:border-[#fffb96] transition-all group"
+                            className="flex items-center gap-2 px-3 py-1.5 border border-[#fffb96]/30 bg-black/40 hover:bg-[#fffb96]/10 hover:border-[#fffb96] transition-all"
                         >
                             <span className="material-symbols-outlined text-sm text-[#fffb96]">language</span>
                             <span className="font-mono text-[10px] text-[#fffb96] uppercase tracking-widest">
-                {language === 'tr' ? 'EN' : 'TR'}
-              </span>
+                                {language === 'tr' ? 'EN' : 'TR'}
+                            </span>
                         </button>
 
+                        {/* System Active */}
                         <div className="flex items-center gap-2">
                             <div className="w-2 h-2 rounded-full bg-[#05ffa1] shadow-[0_0_8px_#05ffa1]"></div>
-                            <span className="font-mono text-[10px] text-[#05ffa1]">{t.system.systemActive}</span>
+                            <span className="font-mono text-[10px] text-[#05ffa1] hidden sm:inline">{t.system.systemActive}</span>
                         </div>
                     </div>
                 </div>
@@ -130,9 +155,9 @@ const App: React.FC = () => {
         }
       `}</style>
 
-            {/* Global Aesthetics */}
-            <div className="fixed bottom-4 right-8 z-50 pointer-events-none text-right font-mono text-[10px] text-[#ff71ce] opacity-60">
-                {t.system.latency}: 14ms<br/>
+            {/* Global Aesthetics - mobilde gizle */}
+            <div className="hidden sm:block fixed bottom-4 right-8 z-50 pointer-events-none text-right font-mono text-[10px] text-[#ff71ce] opacity-60">
+                {t.system.latency}: 14ms<br />
                 {t.system.encryption}
             </div>
         </div>

@@ -29,11 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, language }) => {
 
     return (
         <div className="group relative bg-black/40 border p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-2"
-             style={{
-                 borderColor: 'var(--neon-cyan)',
-                 borderWidth: '1px',
-                 borderOpacity: 0.3
-             }}
+             style={{ borderColor: 'var(--neon-cyan)', borderWidth: '1px' }}
              onMouseEnter={(e) => {
                  e.currentTarget.style.borderColor = 'var(--neon-pink)';
                  e.currentTarget.style.boxShadow = '8px 8px 0px var(--neon-pink)';
@@ -50,20 +46,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, language }) => {
                     className="w-full h-full object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110 opacity-70 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#120422] to-transparent opacity-60"></div>
-
-                {/* Status Badge */}
                 <div className="absolute top-2 left-2 px-2 py-0.5 bg-black/80 border text-[8px] font-mono tracking-widest"
-                     style={{
-                         borderColor: statusColors[project.status],
-                         color: statusColors[project.status]
-                     }}>
+                     style={{ borderColor: statusColors[project.status], color: statusColors[project.status] }}>
                     {getStatusText(project.status)}
                 </div>
             </div>
 
             {/* Content */}
             <div className="mb-6">
-                <h3 className="font-['Syncopate'] text-lg font-bold mb-2 transition-colors uppercase group-hover:text-[var(--neon-pink)]"
+                <h3 className="font-['Syncopate'] text-base lg:text-lg font-bold mb-2 transition-colors uppercase group-hover:text-[var(--neon-pink)]"
                     style={{ color: 'var(--neon-cyan)' }}>
                     {project.title}
                 </h3>
@@ -73,8 +64,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, language }) => {
                 <div className="flex flex-wrap gap-2">
                     {project.tags.map(tag => (
                         <span key={tag} className="text-[8px] font-mono border border-white/10 px-2 py-0.5 text-gray-500 uppercase">
-              {tag}
-            </span>
+                            {tag}
+                        </span>
                     ))}
                 </div>
             </div>
@@ -102,13 +93,14 @@ const ProjectsView: React.FC<ProjectsViewProps> = ({ language }) => {
     const t = translations[language];
 
     return (
-        <div className="space-y-12">
-            <div className="flex items-end gap-6 mb-12">
-                <h2 className="retro-text-gradient text-5xl font-['Syncopate'] uppercase" style={{ lineHeight: '1.2' }}>{t.projects.title}</h2>
-                
+        <div className="space-y-8 lg:space-y-12">
+            <div className="flex items-end gap-6 mb-8 lg:mb-12">
+                <h2 className="retro-text-gradient text-4xl sm:text-5xl font-['Syncopate'] uppercase" style={{ lineHeight: '1.2' }}>
+                    {t.projects.title}
+                </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
                 {PROJECTS.map(project => (
                     <ProjectCard key={project.id} project={project} language={language} />
                 ))}
