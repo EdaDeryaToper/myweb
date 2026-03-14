@@ -1,23 +1,12 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk, Syncopate, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
+import AppShell from './components/AppShell'
+import { LanguageProvider } from './context/LanguageContext'
 
-const spaceGrotesk = Space_Grotesk({
-    subsets: ['latin'],
-    variable: '--font-space-grotesk',
-})
-
-const syncopate = Syncopate({
-    weight: ['400', '700'],
-    subsets: ['latin'],
-    variable: '--font-syncopate',
-})
-
-const notoSansJP = Noto_Sans_JP({
-    weight: ['300', '700'],
-    subsets: ['latin'],
-    variable: '--font-noto-jp',
-})
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
+const syncopate = Syncopate({ weight: ['400', '700'], subsets: ['latin'], variable: '--font-syncopate' })
+const notoSansJP = Noto_Sans_JP({ weight: ['300', '700'], subsets: ['latin'], variable: '--font-noto-jp' })
 
 export const metadata: Metadata = {
     title: 'EDA DERYA TOPER // PORTFOLIO',
@@ -25,11 +14,7 @@ export const metadata: Metadata = {
     authors: [{ name: 'Eda Derya Toper' }],
 }
 
-export default function RootLayout({
-                                       children,
-                                   }: {
-    children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="tr">
         <head>
@@ -38,14 +23,10 @@ export default function RootLayout({
                 rel="stylesheet"
             />
         </head>
-        <body className={`
-        ${spaceGrotesk.variable}
-        ${syncopate.variable}
-        ${notoSansJP.variable}
-        font-['Space_Grotesk']
-        bg-[#120422] text-white
-      `}>
-        {children}
+        <body className={`${spaceGrotesk.variable} ${syncopate.variable} ${notoSansJP.variable} font-['Space_Grotesk'] bg-[#120422] text-white`}>
+        <LanguageProvider>
+            <AppShell>{children}</AppShell>
+        </LanguageProvider>
         </body>
         </html>
     )

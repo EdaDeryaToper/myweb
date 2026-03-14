@@ -7,7 +7,8 @@ export const translations = {
                 home: "Ana Sayfa",
                 projects: "ARŞİVLER",
                 skills: "YETENEKLER",
-                contact: "İLETİŞİM"
+                contact: "İLETİŞİM",
+                blog: "BLOG"
             },
             cpuUsage: "CPU_KULLANIM",
             memBuffer: "BELLEK_TAMPON",
@@ -81,7 +82,8 @@ export const translations = {
                 home: "Dashboard",
                 projects: "Archives",
                 skills: "Capacities",
-                contact: "Uplink"
+                contact: "Uplink",
+                blog: "BLOG"
             },
             cpuUsage: "CPU_USAGE",
             memBuffer: "MEM_BUFFER",
