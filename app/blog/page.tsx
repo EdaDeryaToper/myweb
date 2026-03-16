@@ -1,11 +1,9 @@
+"use client"
 import { supabase, Post } from '../lib/supabase'
 import Link from 'next/link'
-import type { Metadata } from 'next'
+import { useEffect, useState } from 'react'
 
-export const metadata: Metadata = {
-    title: 'Teknik Yazılar | Eda Derya Toper',
-    description: 'Eda Derya Toper tarafından yazılmış yazılım, web teknolojileri ve yazılım mimarisi üzerine teknik yazılar.',
-}
+
 
 async function getPosts(): Promise<Post[]> {
     const { data, error } = await supabase
@@ -22,8 +20,17 @@ async function getPosts(): Promise<Post[]> {
     return data || []
 }
 
-export default async function BlogPage() {
-    const posts = await getPosts()
+export default function BlogPage() {
+    const [posts, setPosts] = useState<Post[]>([])
+
+    useEffect(() => {
+        supabase
+            .from('technical_posts')
+            .select('*')
+            .eq('published', true)
+            .order('published_at', { ascending: false })
+            .then(({ data }) => setPosts(data || []))
+    }, [])
 
     return (
         <div className="relative min-h-screen bg-[#120422]">

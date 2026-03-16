@@ -27,7 +27,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LanguageProvider>
             <AppShell>{children}</AppShell>
         </LanguageProvider>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Person",
+                    "name": "Eda Derya Toper",
+                    "url": "https://www.edaderyatoper.com",
+                    "jobTitle": "Software Specialist",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Ankara",
+                        "addressCountry": "TR"
+                    },
+                    "sameAs": [
+                        "https://github.com/edaderyatoper",
+                        "https://linkedin.com/in/eda-derya-toper",
+                        "https://x.com/ToperEda"
+                    ]
+                })
+            }}
+        />
         </body>
         </html>
+        
     )
 }

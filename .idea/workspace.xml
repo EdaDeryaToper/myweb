@@ -5,28 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fc106e8-a21a-441d-b990-55015aebbc12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/blog/[slug]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/blog/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/AppShell.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/SidebarWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/context/LanguageContext.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/supabase.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/projects/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/skills/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/blog/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/sitemap.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ContactView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ContactView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/HomeView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/HomeView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ProjectsView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ProjectsView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/SkillsView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/SkillsView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/blog/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/blog/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/translations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/translations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +99,7 @@
       <workItem from="1770541305208" duration="13331000" />
       <workItem from="1772302575609" duration="14938000" />
       <workItem from="1773082353907" duration="4350000" />
-      <workItem from="1773517422821" duration="3565000" />
+      <workItem from="1773517422821" duration="7239000" />
     </task>
     <task id="LOCAL-00001" summary="site tamamlandı">
       <option name="closed" value="true" />
@@ -188,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773502389604</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="supabase eklendi">
+      <option name="closed" value="true" />
+      <created>1773522302243</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773522302243</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +200,8 @@
     <MESSAGE value="header düzeltme" />
     <MESSAGE value="vite tan çıkıldı ve next.js kurulumu ile site tekrar ayağa kaldırıldı" />
     <MESSAGE value="son değişiklik" />
-    <option name="LAST_COMMIT_MESSAGE" value="son değişiklik" />
+    <MESSAGE value="supabase eklendi" />
+    <option name="LAST_COMMIT_MESSAGE" value="supabase eklendi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

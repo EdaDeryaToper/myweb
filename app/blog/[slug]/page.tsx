@@ -4,9 +4,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 interface Props {
-    params: { slug: string }
+    params: Promise<{ slug: string }>
 }
-
 async function getPost(slug: string): Promise<Post | null> {
     const { data, error } = await supabase
         .from('technical_posts')
@@ -20,9 +19,9 @@ async function getPost(slug: string): Promise<Post | null> {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const post = await getPost(params.slug)
+    const { slug } = await params
+    const post = await getPost(slug)
     if (!post) return { title: 'Yazı bulunamadı' }
-
     return {
         title: `${post.title} | Eda Derya Toper`,
         description: post.excerpt || '',
@@ -54,7 +53,8 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-    const post = await getPost(params.slug)
+    const { slug } = await params
+    const post = await getPost(slug)
     if (!post) notFound()
 
     return (
@@ -157,8 +157,33 @@ export default async function BlogPostPage({ params }: Props) {
                         ← Tüm yazılar
                     </Link>
                 </div>
-
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Article",
+                            "headline": post.title,
+                            "description": post.excerpt || '',
+                            "author": {
+                                "@type": "Person",
+                                "name": post.author,
+                                "url": "https://www.edaderyatoper.com"
+                            },
+                            "datePublished": post.published_at,
+                            "dateModified": post.published_at,
+                            "image": post.cover_image_url || '',
+                            "url": `https://www.edaderyatoper.com/blog/${post.slug}`,
+                            "publisher": {
+                                "@type": "Person",
+                                "name": "Eda Derya Toper",
+                                "url": "https://www.edaderyatoper.com"
+                            }
+                        })
+                    }}
+                />
             </main>
         </div>
+        
     )
 }
