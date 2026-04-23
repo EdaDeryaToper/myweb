@@ -3,6 +3,7 @@ import { Space_Grotesk, Syncopate, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import AppShell from './components/AppShell'
 import { LanguageProvider } from './context/LanguageContext'
+import { Analytics } from "@vercel/analytics/next"
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
 const syncopate = Syncopate({ weight: ['400', '700'], subsets: ['latin'], variable: '--font-syncopate' })
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 })
             }}
         />
+        <Analytics />
         </body>
         </html>
         

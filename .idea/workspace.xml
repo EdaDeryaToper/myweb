@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fc106e8-a21a-441d-b990-55015aebbc12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/admin/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/blog/[slug]/BlogPostClient.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blog/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/blog/[slug]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blog/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/blog/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blog/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/blog/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/supabase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/supabase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/translations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/translations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +37,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/edaderyatoper/GitHub/myweb/node_modules/.vite/deps/_metadata.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/edaderyatoper/GitHub/myweb/node_modules/.vite/deps/_metadata.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/edaderyatoper/GitHub/myweb/node_modules/.package-lock.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -105,7 +93,7 @@
       <workItem from="1772302575609" duration="14938000" />
       <workItem from="1773082353907" duration="4350000" />
       <workItem from="1773517422821" duration="8093000" />
-      <workItem from="1776520383375" duration="9016000" />
+      <workItem from="1776520383375" duration="12063000" />
     </task>
     <task id="LOCAL-00001" summary="site tamamlandı">
       <option name="closed" value="true" />
@@ -195,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773693343735</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="blog sayfası güncellendi">
+      <option name="closed" value="true" />
+      <created>1776969726587</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1776969726587</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +212,8 @@
     <MESSAGE value="son değişiklik" />
     <MESSAGE value="supabase eklendi" />
     <MESSAGE value="blog güncelleme" />
-    <option name="LAST_COMMIT_MESSAGE" value="blog güncelleme" />
+    <MESSAGE value="blog sayfası güncellendi" />
+    <option name="LAST_COMMIT_MESSAGE" value="blog sayfası güncellendi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
