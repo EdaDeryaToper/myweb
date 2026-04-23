@@ -63,6 +63,17 @@ export const translations = {
             nodeStatus: "DÜĞÜM_404_HAZIR",
             statusMessage: "ANKARA AĞ SİSTEMLERİ // BAĞLANTI GÜVENLİ. VERİ UÇTAN UCA NOSTALJİ PROTOKOLÜ İLE ŞİFRELENDİ."
         },
+        blog: {
+            sysTag: "SYS://TEKNİK_YAZILAR",
+            title: "TEKNİK\nYAZILAR",
+            subtitle: "Yazılım mimarisi, web teknolojileri ve modern geliştirme pratikleri üzerine notlar.",
+            empty: "// henüz yazı yok",
+            readingTime: "dk okuma",
+            readMore: "Devamını oku",
+            backToBlog: "← Yazılara dön",
+            toc: "İçindekiler",
+            publishedAt: "Yayınlandı",
+        },
 
         // System Messages
         system: {
@@ -137,6 +148,17 @@ export const translations = {
             },
             nodeStatus: "NODE_404_READY",
             statusMessage: "ANKARA NETWORK SYSTEMS // ESTABLISHED CONNECTION SECURE. DATA IS ENCRYPTED VIA END-TO-END NOSTALGIA PROTOCOL."
+        },
+        blog: {
+            sysTag: "SYS://TECHNICAL_POSTS",
+            title: "TECHNICAL\nWRITINGS",
+            subtitle: "Notes on software architecture, web technologies and modern development practices.",
+            empty: "// no posts yet",
+            readingTime: "min read",
+            readMore: "Read more",
+            backToBlog: "← Back to posts",
+            toc: "Table of Contents",
+            publishedAt: "Published",
         },
 
         // System Messages

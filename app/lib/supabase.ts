@@ -9,7 +9,7 @@ export type Post = {
     id: number
     title: string
     slug: string
-    content: string | null
+    content: Record<string, unknown> | null  // Tiptap JSON
     excerpt: string | null
     cover_image_url: string | null
     cover_image_alt: string | null
@@ -18,5 +18,7 @@ export type Post = {
     author: string
     tags: string | null
     reading_time: number | null
+    language: 'tr' | 'en'
     created_at: string
+    updated_at: string | null
 }
