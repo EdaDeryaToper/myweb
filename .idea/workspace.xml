@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fc106e8-a21a-441d-b990-55015aebbc12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/api/cron/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/eda-derya-toper-logo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/eda-derya-toper-logo.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +96,7 @@
       <workItem from="1772302575609" duration="14938000" />
       <workItem from="1773082353907" duration="4350000" />
       <workItem from="1773517422821" duration="8093000" />
-      <workItem from="1776520383375" duration="14597000" />
+      <workItem from="1776520383375" duration="16654000" />
     </task>
     <task id="LOCAL-00001" summary="site tamamlandı">
       <option name="closed" value="true" />
@@ -200,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776974001264</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="cron job tetikleme">
+      <option name="closed" value="true" />
+      <created>1777616576744</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1777616576744</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +233,8 @@
     <MESSAGE value="blog güncelleme" />
     <MESSAGE value="blog sayfası güncellendi" />
     <MESSAGE value="analytics" />
-    <option name="LAST_COMMIT_MESSAGE" value="analytics" />
+    <MESSAGE value="cron job tetikleme" />
+    <option name="LAST_COMMIT_MESSAGE" value="cron job tetikleme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
