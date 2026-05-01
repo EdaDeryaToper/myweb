@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fc106e8-a21a-441d-b990-55015aebbc12" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/api/cron/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="XML File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -93,7 +94,7 @@
       <workItem from="1772302575609" duration="14938000" />
       <workItem from="1773082353907" duration="4350000" />
       <workItem from="1773517422821" duration="8093000" />
-      <workItem from="1776520383375" duration="12063000" />
+      <workItem from="1776520383375" duration="14597000" />
     </task>
     <task id="LOCAL-00001" summary="site tamamlandı">
       <option name="closed" value="true" />
@@ -191,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776969726587</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="analytics">
+      <option name="closed" value="true" />
+      <created>1776974001264</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1776974001264</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +222,8 @@
     <MESSAGE value="supabase eklendi" />
     <MESSAGE value="blog güncelleme" />
     <MESSAGE value="blog sayfası güncellendi" />
-    <option name="LAST_COMMIT_MESSAGE" value="blog sayfası güncellendi" />
+    <MESSAGE value="analytics" />
+    <option name="LAST_COMMIT_MESSAGE" value="analytics" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
