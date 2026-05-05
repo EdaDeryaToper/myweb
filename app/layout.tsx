@@ -11,7 +11,7 @@ const syncopate = Syncopate({ weight: ['400', '700'], subsets: ['latin'], variab
 const notoSansJP = Noto_Sans_JP({ weight: ['300', '700'], subsets: ['latin'], variable: '--font-noto-jp' })
 
 export const metadata: Metadata = {
-    title: 'EDA DERYA TOPER // PORTFOLIO',
+    title: 'EDA DERYA TOPER',
     description: 'Full Stack Developer - Web Architectures & Modern Solutions',
     authors: [{ name: 'Eda Derya Toper' }],
     icons: {
