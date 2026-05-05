@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     description: 'Full Stack Developer - Web Architectures & Modern Solutions',
     authors: [{ name: 'Eda Derya Toper' }],
     icons: {
-        icon: '/eda-derya-toper-logo.jpeg', // Burası sekmedeki görseli belirler
-        shortcut: '/eda-derya-toper-logo.jpeg',
-        apple: '/eda-derya-toper-logo.jpeg', // iPhone ana ekrana ekleme simgesi
+        icon: '/icon.png', // Burası sekmedeki görseli belirler
+        shortcut: '/icon.png',
+        apple: '/icon.png', // iPhone ana ekrana ekleme simgesi
     },
     openGraph: {
-        images: ['/eda-derya-toper-logo.jpeg'],
+        images: ['/icon.png'],
     },
 }
 
