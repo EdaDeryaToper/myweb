@@ -92,7 +92,7 @@
       <workItem from="1773082353907" duration="4350000" />
       <workItem from="1773517422821" duration="8093000" />
       <workItem from="1776520383375" duration="21697000" />
-      <workItem from="1778012754136" duration="975000" />
+      <workItem from="1778012754136" duration="1359000" />
     </task>
     <task id="LOCAL-00001" summary="site tamamlandı">
       <option name="closed" value="true" />
@@ -222,7 +222,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778013305879</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="favicon kaldırıldı">
+      <option name="closed" value="true" />
+      <created>1778013832376</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1778013832376</updated>
+    </task>
+    <task id="LOCAL-00018" summary="dkdlk">
+      <option name="closed" value="true" />
+      <created>1778013848856</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1778013848856</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +263,9 @@
     <MESSAGE value="analytics" />
     <MESSAGE value="cron job tetikleme" />
     <MESSAGE value="logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="logo" />
+    <MESSAGE value="favicon kaldırıldı" />
+    <MESSAGE value="dkdlk" />
+    <option name="LAST_COMMIT_MESSAGE" value="dkdlk" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
