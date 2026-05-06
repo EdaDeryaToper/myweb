@@ -54,7 +54,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     "sameAs": [
                         "https://github.com/edaderyatoper",
                         "https://linkedin.com/in/eda-derya-toper",
-                        "https://x.com/ToperEda"
+                        "https://x.com/ToperEda",
+                        "https://www.researchgate.net/profile/Eda-Toper",
+                        "https://www.researchgate.net/publication/403203305_Virtual_Reality-Based_Control_and_Simulation_of_a_Real_Robotic_Arm",
+                        "https://avesis.istanbul.edu.tr/yayin/ab86e5b2-46dd-4655-b764-5675e3c04980/virtual-reality-based-control-and-simulation-of-a-real-robotic-arm"
                     ]
                 })
             }}
