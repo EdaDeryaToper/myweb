@@ -61,43 +61,46 @@ export default function PublicationsPage() {
         setCopied(true)
         setTimeout(() => setCopied(false), 2000)
     }
-//google arama motoru makale yayını için 
-    <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "ScholarlyArticle",
-                "headline": "Virtual Reality-Based Control and Simulation of a Real Robotic Arm",
-                "author": [
-                    { "@type": "Person", "name": "Eda Derya Toper", "url": "https://www.edaderyatoper.com" },
-                    { "@type": "Person", "name": "Fırat Kaçar" },
-                    { "@type": "Person", "name": "Serap Cekli" }
-                ],
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "CEAI — Control Engineering and Applied Informatics"
-                },
-                "isPartOf": {
-                    "@type": "PublicationVolume",
-                    "volumeNumber": "28",
-                    "issueNumber": "1",
-                    "pageStart": "38",
-                    "pageEnd": "47"
-                },
-                "datePublished": "2026",
-                "url": "https://www.edaderyatoper.com/publications",
-                "sameAs": [
-                    "https://www.researchgate.net/publication/403203305_Virtual_Reality-Based_Control_and_Simulation_of_a_Real_Robotic_Arm",
-                    "https://avesis.istanbul.edu.tr/yayin/ab86e5b2-46dd-4655-b764-5675e3c04980/virtual-reality-based-control-and-simulation-of-a-real-robotic-arm",
-                    "http://www.ceai.srait.ro/index.php?journal=ceai&page=article&op=viewFile&path[]=9592&path[]=1797"
-                ],
-                "keywords": "Robotic arm, Virtual reality, Robot operating system, Kinematics, Robot manipulator",
-                "description": "A 3DOF/5DOF robotic arm integrated with VR interfaces based on ROS and Unity3D platforms for remote control and simulation."
-            })
-        }}
-    />
+
+    //script --> google arama motoru makale yayını için
     return (
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "ScholarlyArticle",
+                        "headline": "Virtual Reality-Based Control and Simulation of a Real Robotic Arm",
+                        "author": [
+                            { "@type": "Person", "name": "Eda Derya Toper", "url": "https://www.edaderyatoper.com" },
+                            { "@type": "Person", "name": "Fırat Kaçar" },
+                            { "@type": "Person", "name": "Serap Cekli" }
+                        ],
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "CEAI — Control Engineering and Applied Informatics"
+                        },
+                        "isPartOf": {
+                            "@type": "PublicationVolume",
+                            "volumeNumber": "28",
+                            "issueNumber": "1",
+                            "pageStart": "38",
+                            "pageEnd": "47"
+                        },
+                        "datePublished": "2026",
+                        "url": "https://www.edaderyatoper.com/publications",
+                        "sameAs": [
+                            "https://www.researchgate.net/publication/403203305_Virtual_Reality-Based_Control_and_Simulation_of_a_Real_Robotic_Arm",
+                            "https://avesis.istanbul.edu.tr/yayin/ab86e5b2-46dd-4655-b764-5675e3c04980/virtual-reality-based-control-and-simulation-of-a-real-robotic-arm",
+                            "http://www.ceai.srait.ro/index.php?journal=ceai&page=article&op=viewFile&path[]=9592&path[]=1797"
+                        ],
+                        "keywords": "Robotic arm, Virtual reality, Robot operating system, Kinematics, Robot manipulator",
+                        "description": "A 3DOF/5DOF robotic arm integrated with VR interfaces based on ROS and Unity3D platforms for remote control and simulation."
+                    })
+                }}
+            />
         <div className="max-w-5xl space-y-10">
 
             {/* Header */}
@@ -424,5 +427,6 @@ export default function PublicationsPage() {
                 </span>
             </div>
         </div>
+        </>
     )
 }
