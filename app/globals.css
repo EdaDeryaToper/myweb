@@ -464,3 +464,7 @@ body {
   height: 0;
   font-style: italic;
 }
+@keyframes slideIn {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}

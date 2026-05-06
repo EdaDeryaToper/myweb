@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fc106e8-a21a-441d-b990-55015aebbc12" name="Changes" comment="" />
+    <list default="true" id="7fc106e8-a21a-441d-b990-55015aebbc12" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/publications/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/AppShell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AppShell.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/translations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/translations.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="XML File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -92,7 +98,8 @@
       <workItem from="1773082353907" duration="4350000" />
       <workItem from="1773517422821" duration="8093000" />
       <workItem from="1776520383375" duration="21697000" />
-      <workItem from="1778012754136" duration="1359000" />
+      <workItem from="1778012754136" duration="3738000" />
+      <workItem from="1778089491683" duration="7947000" />
     </task>
     <task id="LOCAL-00001" summary="site tamamlandı">
       <option name="closed" value="true" />
@@ -238,7 +245,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778013848856</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="speed insights eklendi">
+      <option name="closed" value="true" />
+      <created>1778014200315</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1778014200315</updated>
+    </task>
+    <task id="LOCAL-00020" summary="title değiştirildi">
+      <option name="closed" value="true" />
+      <created>1778015380238</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1778015380238</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +288,9 @@
     <MESSAGE value="logo" />
     <MESSAGE value="favicon kaldırıldı" />
     <MESSAGE value="dkdlk" />
-    <option name="LAST_COMMIT_MESSAGE" value="dkdlk" />
+    <MESSAGE value="speed insights eklendi" />
+    <MESSAGE value="title değiştirildi" />
+    <option name="LAST_COMMIT_MESSAGE" value="title değiştirildi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

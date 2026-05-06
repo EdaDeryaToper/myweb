@@ -12,6 +12,7 @@ const navItems = [
     { path: '/projects', label: 'projects', icon: 'folder_open' },
     { path: '/skills',   label: 'skills',   icon: 'bolt' },
     { path: '/blog',     label: 'blog',     icon: 'edit_note' },
+    { path: '/publications',  label: 'publications', icon: 'menu_book' },
     { path: '/contact',  label: 'contact',  icon: 'send' },
 ]
 
@@ -118,8 +119,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                         const isActive = item.path === '/'
                             ? pathname === '/'
                             : pathname?.startsWith(item.path)
-                        const label = item.label === 'blog'
-                            ? 'BLOG'
+                        const label = (item.label === 'blog' || item.label === 'publications')
+                            ? t.sidebar.nav[item.label as keyof typeof t.sidebar.nav] || item.label.toUpperCase()
                             : t.sidebar.nav[item.label as keyof typeof t.sidebar.nav]
                         return (
                             <Link

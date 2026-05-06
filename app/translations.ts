@@ -5,10 +5,11 @@ export const translations = {
             subtitle: "Geliştirici v95.0",
             nav: {
                 home: "Ana Sayfa",
-                projects: "ARŞİVLER",
-                skills: "YETENEKLER",
-                contact: "İLETİŞİM",
-                blog: "BLOG"
+                projects: "Arşivler",
+                skills: "Yetenekler",
+                contact: "İletişim",
+                blog: "Blog",
+                publications: "Yayınlar",
             },
             cpuUsage: "CPU_KULLANIM",
             memBuffer: "BELLEK_TAMPON",
@@ -74,6 +75,22 @@ export const translations = {
             toc: "İçindekiler",
             publishedAt: "Yayınlandı",
         },
+        publications: {
+            sysTag: "SYS://YAYINLAR",
+            title: "ARAŞTIRMA\nYAYINLARI",
+            subtitle: "Akademik çalışmalar & hakemli dergiler",
+            abstract: "Özet",
+            keywords: "Anahtar Kelimeler",
+            accessLinks: "Erişim Linkleri",
+            viewPdf: "PDF Görüntüle",
+            closePdf: "PDF Kapat",
+            openNewTab: "Yeni Sekmede Aç",
+            copy: "Kopyala",
+            copied: "Kopyalandı",
+            peerReviewed: "Hakemli Dergi",
+        },
+
+
 
         // System Messages
         system: {
@@ -94,7 +111,8 @@ export const translations = {
                 projects: "Archives",
                 skills: "Capacities",
                 contact: "Uplink",
-                blog: "BLOG"
+                blog: "Blog",
+                publications: "Publications",
             },
             cpuUsage: "CPU_USAGE",
             memBuffer: "MEM_BUFFER",
@@ -161,6 +179,20 @@ export const translations = {
             publishedAt: "Published",
         },
 
+publications: {
+    sysTag: "SYS://PUBLICATIONS",
+        title: "RESEARCH\nPUBLICATIONS",
+        subtitle: "Academic works & peer-reviewed journals",
+        abstract: "Abstract",
+        keywords: "Keywords",
+        accessLinks: "Access Links",
+        viewPdf: "View PDF",
+        closePdf: "Close PDF",
+        openNewTab: "Open in New Tab",
+        copy: "Copy",
+        copied: "Copied",
+        peerReviewed: "Peer-Reviewed",
+},
         // System Messages
         system: {
             booting: "BOOTING_SYSTEM_V95...",
